@@ -1,11 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Salas Fuentes;Itzel;
+N:Salas Fuentes;Itzel;;;
 FN:Itzel Salas Fuentes
-ORG:SIE SISTEMAS SA de CV 
-TITLE:Director Jurídico
-TEL;TYPE=CELL:+52 55 2243 6883
-EMAIL:itzel.salas@siesistemas.com.mx
+ORG:SIE SISTEMAS SA DE CV
+TITLE:Directora Jurídica
+TEL;TYPE=CELL:+525522436883
+EMAIL;TYPE=WORK:itzel.salas@siesistemas.com.mx
 URL:https://www.sietechsystems.com/
-ADR;TYPE=WORK:;;Lomas de Sotelo No. Ext:1102 No Interior: 403 Piso 4;Lomas Hermosa;Miguel Hidalgo;CDMX;11200;México
+ADR;TYPE=WORK:;;Lomas de Sotelo 1102 Int. 403 Piso 4;Lomas Hermosa;Miguel Hidalgo;CDMX;11200;México
 END:VCARD
+
