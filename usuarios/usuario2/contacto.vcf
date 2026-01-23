@@ -1,11 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Hernandez;Padilla;Victor;;
-FN:Victor Hernandez Padilla
-ORG:SIE SISTEMAS SA de CV 
-TITLE:Director Financiero
-TEL;TYPE=CELL:+525625655012
-EMAIL:victor.hernandez@siesistemas.com.mx
+N:Reyes Vergara;Mauricio;;;
+FN:Mauricio Reyes Vergara
+ORG:SIE SISTEMAS SA DE CV
+TITLE:Director de Operaciones y Tecnología
+TEL;TYPE=CELL:+525554588200
+EMAIL;TYPE=WORK:mauricio.reyes@siesistemas.com.mx
 URL:https://www.sietechsystems.com/
-ADR;TYPE=WORK:;;Lomas de Sotelo No. Ext:1102 No Interior: 403 Piso 4;Lomas Hermosa;Miguel Hidalgo;CDMX;11200;México
+ADR;TYPE=WORK:;;Lomas de Sotelo 1102 Int. 403 Piso 4;Lomas Hermosa;Miguel Hidalgo;CDMX;11200;México
 END:VCARD
+
