@@ -2,257 +2,252 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Daniel Garrido</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Hernandez Padilla</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg-1:#a1a1a1;
-  --bg-2:#1c1c1c;
+  --bg-1:#bdbdbd;
+  --bg-2:#1a1a1a;
+  --glass:rgba(255,255,255,.10);
+  --glass-strong:rgba(255,255,255,.14);
+  --border:rgba(255,255,255,.18);
   --text:#ffffff;
-  --glass:rgba(255,255,255,.08);
-  --border:rgba(255,255,255,.15);
+  --accent:#3b82f6;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%}
 
 body{
   font-family:'Inter',sans-serif;
   background:
     url("https://www.transparenttextures.com/patterns/topography.png"),
     linear-gradient(180deg,var(--bg-1),var(--bg-2));
-  background-size:250px,cover;
+  background-size:260px,cover;
   background-attachment:fixed;
   color:var(--text);
+  min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:40px 20px 150px;
+  padding:50px 20px 170px;
 }
 
-/* LOADER */
-#loader{
-  position:fixed;
-  inset:0;
-  background:#111;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.spinner{
-  width:50px;height:50px;
-  border:4px solid rgba(255,255,255,.2);
-  border-left-color:#fff;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.container{
-  max-width:480px;
+.wrapper{
   width:100%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+/* CARD PRINCIPAL */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(22px);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:28px 24px;
+  box-shadow:0 22px 46px rgba(0,0,0,.4);
   text-align:center;
 }
 
-.logo{
-  max-height:50px;
-  margin-bottom:25px;
-  opacity:.9;
-}
-
+.logo{max-height:46px;margin-bottom:22px}
 .profile{
-  width:120px;height:120px;
-  border-radius:50%;
+  width:112px;height:112px;
+  border-radius:26px;
   object-fit:cover;
-  border:4px solid rgba(255,255,255,.2);
+  border:3px solid rgba(255,255,255,.25);
   margin-bottom:18px;
 }
 
-h1{
-  font-size:1.5rem;
-  font-weight:800;
-  letter-spacing:-.5px;
-}
-h2{
-  font-size:1rem;
-  font-weight:500;
-  opacity:.8;
-  margin:6px 0 18px;
-}
-.bio{
-  font-size:.95rem;
-  opacity:.7;
-  margin-bottom:30px;
-}
+h1{font-size:1.45rem;font-weight:800}
+h2{font-size:.95rem;font-weight:500;opacity:.75;margin-top:6px}
+.bio{font-size:.9rem;opacity:.7;margin-top:14px}
 
-/* SOCIAL TOP */
+/* REDES */
 .socials{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin-bottom:35px;
+  gap:14px;
+  margin-top:22px;
 }
 .socials a{
-  width:45px;height:45px;
-  border-radius:50%;
-  background:#fff;
+  width:44px;height:44px;
+  border-radius:14px;
+  background:rgba(255,255,255,.95);
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
 }
-.socials i{font-size:1.4rem}
 
-/* SECTIONS */
-.section{
-  font-size:.8rem;
-  letter-spacing:1px;
+/* ==== MARCO CONTACTO ==== */
+.contact-frame{
+  background:var(--glass-strong);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:22px;
+  box-shadow:0 20px 44px rgba(0,0,0,.45);
+}
+
+.contact-title{
+  font-size:.75rem;
+  letter-spacing:1.6px;
   text-transform:uppercase;
+  opacity:.7;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+/* TARJETAS DE CONTACTO */
+.contact-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact-item{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  transition:all .25s ease;
+}
+
+.contact-item:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.12);
+}
+
+.contact-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  margin-right:14px;
+  box-shadow:0 6px 14px rgba(0,0,0,.4);
+}
+
+.contact-text{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-text span{
+  font-size:.95rem;
+  font-weight:600;
+}
+
+.contact-text small{
+  font-size:.75rem;
   opacity:.6;
-  margin:30px 0 16px;
+  margin-top:2px;
+}
+
+/* DOCK */
+.dock{
+  position:fixed;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:420px;
+  background:rgba(20,20,20,.85);
+  backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:28px;
+  display:flex;
+  gap:10px;
+  padding:10px;
+  box-shadow:0 14px 32px rgba(0,0,0,.45);
+}
+
+.dock button,.dock a{
+  flex:1;
+  border:none;
+  border-radius:18px;
+  padding:14px;
+  font-weight:600;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
   display:flex;
   align-items:center;
   justify-content:center;
   gap:8px;
 }
 
-/* LIST BUTTONS */
-.list{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.item{
-  display:flex;
-  align-items:center;
-  height:64px;
-  padding:6px;
-  border-radius:50px;
-  background:var(--glass);
-  backdrop-filter:blur(14px);
-  border:1px solid var(--border);
-  text-decoration:none;
-  color:#fff;
-  transition:transform .2s;
-}
-.item:hover{transform:scale(1.02)}
-
-.icon{
-  width:50px;height:50px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  margin-right:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,.3);
-}
-
-.label{
-  flex:1;
-  font-size:1rem;
-  font-weight:600;
-  text-align:center;
-  padding-right:50px;
-}
-
-/* DOCK */
-.dock{
-  position:fixed;
-  bottom:30px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:400px;
-  background:rgba(20,20,20,.85);
-  backdrop-filter:blur(20px);
-  border-radius:24px;
-  display:flex;
-  gap:10px;
-  padding:8px;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
-.dock button,.dock a{
-  flex:1;
-  border:none;
-  border-radius:18px;
-  padding:12px;
-  font-weight:600;
-  background:rgba(255,255,255,.1);
-  color:#fff;
-  text-decoration:none;
-}
-.primary{background:#3b82f6}
+.primary{background:var(--accent)}
 </style>
 </head>
 
 <body>
 
-<div id="loader"><div class="spinner"></div></div>
+<div class="wrapper">
 
-<div class="container">
+  <!-- PERFIL -->
+  <div class="card">
+    <img src="logo.png" class="logo">
+    <img src="profile.png" class="profile">
 
-<img src="logo.png" class="logo">
-<img src="profile.png" class="profile">
+    <h1>Victor Hernandez Padilla</h1>
+    <h2>Chief Creative & Marketing Officer</h2>
+    <p class="bio">Design · Strategy · Growth</p>
 
-<h1>Daniel Garrido</h1>
-<h2>Chief Creative & Marketing Officer</h2>
-<p class="bio">Design · Strategy · Growth</p>
+    <div class="socials">
+      <a href="#"><i class="bi bi-instagram" style="color:#E1306C"></i></a>
+      <a href="#"><i class="bi bi-facebook" style="color:#1877F2"></i></a>
+      <a href="#"><i class="bi bi-linkedin" style="color:#0A66C2"></i></a>
+    </div>
+  </div>
 
-<div class="socials">
-  <a href="#"><i class="bi bi-instagram" style="color:#E1306C"></i></a>
-  <a href="#"><i class="bi bi-facebook" style="color:#1877F2"></i></a>
-  <a href="#"><i class="bi bi-linkedin" style="color:#0A66C2"></i></a>
-</div>
+  <!-- CONTACTO ENMARCADO -->
+  <div class="contact-frame">
+    <div class="contact-title">Información de contacto</div>
 
-<div class="section"><i class="bi bi-person-lines-fill"></i> Información de contacto</div>
+    <div class="contact-list">
 
-<div class="list">
-  <a class="item" href="https://wa.me/5215544522208">
-    <div class="icon" style="background:#25D366"><i class="bi bi-whatsapp"></i></div>
-    <div class="label">WhatsApp</div>
-  </a>
+      <a class="contact-item" href="https://wa.me/5215544522208">
+        <div class="contact-icon" style="background:#25D366">
+          <i class="bi bi-whatsapp"></i>
+        </div>
+        <div class="contact-text">
+          <span>WhatsApp</span>
+          <small>Mensaje directo</small>
+        </div>
+      </a>
 
-  <a class="item" href="tel:+525544522208">
-    <div class="icon" style="background:#007bff"><i class="bi bi-telephone-fill"></i></div>
-    <div class="label">Llamar</div>
-  </a>
+      <a class="contact-item" href="tel:+525544522208">
+        <div class="contact-icon" style="background:#007bff">
+          <i class="bi bi-telephone-fill"></i>
+        </div>
+        <div class="contact-text">
+          <span>Llamada</span>
+          <small>Contacto telefónico</small>
+        </div>
+      </a>
 
-  <a class="item" href="mailto:correo@dominio.com">
-    <div class="icon" style="background:#EA4335"><i class="bi bi-envelope-fill"></i></div>
-    <div class="label">Email</div>
-  </a>
+      <a class="contact-item" href="mailto:correo@dominio.com">
+        <div class="contact-icon" style="background:#EA4335">
+          <i class="bi bi-envelope-fill"></i>
+        </div>
+        <div class="contact-text">
+          <span>Email</span>
+          <small>Correo profesional</small>
+        </div>
+      </a>
 
-  <a class="item" href="https://tusitio.com" target="_blank">
-    <div class="icon" style="background:#333"><i class="bi bi-globe"></i></div>
-    <div class="label">Sitio Web</div>
-  </a>
-</div>
-
-</div>
-
-<div class="dock">
-  <button onclick="share()"><i class="bi bi-box-arrow-up"></i> Compartir</button>
-  <a href="contacto.vcf" class="primary" download><i class="bi bi-person-plus-fill"></i> Guardar</a>
-</div>
-
-<script>
-window.onload=()=>document.getElementById("loader").style.display="none";
-function share(){
-  if(navigator.share){
-    navigator.share({title:'Daniel Garrido',text:'Mi tarjeta digital',url:location.href})
-  }else{
-    navigator.clipboard.writeText(location.href);
-    alert("Enlace copiado");
-  }
-}
-</script>
-
-</body>
-</html>
+      <a class
