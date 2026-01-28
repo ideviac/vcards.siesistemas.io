@@ -1,74 +1,352 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itzel Salas Fuentes - vCard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itzel Salas Fuentes</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f6f6;
-      padding: 30px;
-    }
-    .card {
-      background: #fff;
-      max-width: 420px;
-      margin: auto;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.08);
-      text-align: center;
-    }
-    .photo {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 12px;
-    }
-    .name {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 8px 0;
-    }
-    .role {
-      color: #666;
-      margin-bottom: 18px;
-    }
-    .item {
-      margin: 8px 0;
-    }
-    a.button {
-      display: block;
-      margin-top: 18px;
-      padding: 14px;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-    }
-    a.button:hover {
-      background: #333;
-    }
-  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-1:#bdbdbd;
+  --bg-2:#1a1a1a;
+  --glass:rgba(255,255,255,.10);
+  --glass-strong:rgba(255,255,255,.14);
+  --border:rgba(255,255,255,.18);
+  --text:#ffffff;
+  --accent:#3b82f6;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20,20,20,0.75),
+      rgba(10,10,10,0.95)
+    ),
+    url("bg-tech.jpg") center / cover no-repeat fixed;
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:50px 20px 170px;
+}
+
+.wrapper{
+  width:100%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* CARD PRINCIPAL */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(22px);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:36px 28px;
+  box-shadow:0 22px 46px rgba(0,0,0,.4);
+  text-align:center;
+}
+
+.logo{
+  display:block;
+  margin:0 auto 22px auto;
+  max-height:46px;
+  opacity:.9;
+}
+
+.profile{
+  width:124px;height:124px;
+  border-radius:26px;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,.25);
+  margin-bottom:18px;
+}
+
+h1{font-size:1.45rem;font-weight:800}
+h2{font-size:.95rem;font-weight:500;opacity:.75;margin-top:6px}
+.bio{font-size:.9rem;opacity:.7;margin-top:10px}
+
+/* REDES */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:22px;
+}
+.socials a{
+  width:44px;height:44px;
+  border-radius:14px;
+  background:rgba(255,255,255,.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+
+/* ==== MARCO CONTACTO ==== */
+.contact-frame{
+  margin-bottom:10px;
+  background:var(--glass-strong);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:22px;
+  box-shadow:0 20px 44px rgba(0,0,0,.45);
+}
+
+.contact-title{
+  font-size:.75rem;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  opacity:.7;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+/* TARJETAS DE CONTACTO */
+.contact-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.contact-item{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  transition:all .25s ease;
+}
+
+.contact-item:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.12);
+}
+
+.contact-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  margin-right:14px;
+  box-shadow:0 6px 14px rgba(0,0,0,.4);
+}
+
+.contact-text{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-text span{
+  font-size:.95rem;
+  font-weight:600;
+}
+
+.contact-text small{
+  font-size:.75rem;
+  opacity:.6;
+  margin-top:2px;
+}
+
+/* DOCK */
+.dock{
+  position:fixed;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:420px;
+  background:rgba(20,20,20,.85);
+  backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:28px;
+  display:flex;
+  gap:10px;
+  padding:10px;
+  box-shadow:0 14px 32px rgba(0,0,0,.45);
+}
+
+.dock button,.dock a{
+  flex:1;
+  border:none;
+  border-radius:18px;
+  padding:14px;
+  font-weight:600;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+/* ===== UBICACIÓN ===== */
+.map-card{
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 28px rgba(0,0,0,.35);
+  margin-bottom:14px;
+}
+
+.map-card iframe{
+  width:100%;
+  height:260px;
+  border:none;
+  filter:grayscale(1) contrast(1.1);
+}
+
+.address{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-size:.85rem;
+  line-height:1.5;
+  opacity:.8;
+  text-align:left;
+}
+.address i{
+  margin-top:2px;
+  color:#fff;
+}
+
+.primary{background:var(--accent)}
+</style>
 </head>
 
 <body>
+
+<div class="wrapper">
+
+  <!-- PERFIL -->
   <div class="card">
-    <!-- Opcional -->
-    <!-- <img src="foto.jpg" class="photo"> -->
+ <!--   <img src="logo.png" class="logo"> -->
+    <img src="profile.png" class="profile">
 
-    <div class="name">Itzel Salas Fuentes</div>
-    <div class="role">Director Jurídico</div>
+    <h1>Itzel Salas Fuentes</h1>
+    <h2>Director Juridico</h2>
+    <p class="bio">Eficaz · Estratégico · Directo</p>
 
-    <div class="item">📞 <a href="tel:+52 55 2243 6883">+52 55 2243 6883</a></div>
-    <div class="item">✉️ <a href="mailto:itzel.salas@siesistemas.com.mx">itzel.salas@siesistemas.com.mx</a></div>
-    <div class="item">🌐 <a href="https://www.sietechsystems.com/" target="_blank">https://www.sietechsystems.com/</a></div>
+   <!-- <div class="socials">
+      <a href="#"><i class="bi bi-instagram" style="color:#333"></i></a>
+      <a href="#"><i class="bi bi-facebook" style="color:#333"></i></a>
+      <a href="#"><i class="bi bi-linkedin" style="color:#333"></i></a>
+    </div>
+  </div> -->
 
-    <a class="button" href="contacto.vcf" download>
-      Guardar contacto
-    </a>
+  <!-- CONTACTO ENMARCADO -->
+  <div class="contact-frame">
+    <div class="contact-title">Información de contacto</div>
+
+    <div class="contact-list">
+
+      <a class="contact-item" href="https://wa.me/525522436883" target="#BDBDBD">
+        <div class="contact-icon" style="background:#333">
+          <i class="bi bi-whatsapp"></i>
+        </div>
+        <div class="contact-text">
+          <span>WhatsApp</span>
+          <small>Mensaje directo</small>
+        </div>
+      </a>
+
+      <a class="contact-item" href="tel:525522436883" target="#BDBDBD">
+        <div class="contact-icon" style="background:#333">
+          <i class="bi bi-telephone-fill"></i>
+        </div>
+        <div class="contact-text">
+          <span>Llamada</span>
+          <small>Contacto telefónico</small>
+        </div>
+      </a>
+
+      <a class="contact-item" href="mailto:itzel.salas@siesistemas.com.mx" target="#BDBDBD">
+        <div class="contact-icon" style="background:#333">
+          <i class="bi bi-envelope-fill"></i>
+        </div>
+        <div class="contact-text">
+          <span>Email</span>
+          <small>Correo profesional</small>
+        </div>
+      </a>
+
+      <a class="contact-item" href="https://www.sietechsystems.com/" target="#BDBDBD">
+        <div class="contact-icon" style="background:#333">
+          <i class="bi bi-globe"></i>
+        </div>
+        <div class="contact-text">
+          <span>Sitio web</span>
+          <small>Portafolio / Empresa</small>
+        </div>
+      </a>
+
+    </div>
   </div>
+<!-- UBICACIÓN -->
+<div class="contact-frame">
+  <div class="contact-title">Ubicación</div>
+
+  <div class="map-card">
+
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://maps.google.com/maps?q=19.4461831,-99.2154751&z=21&output=embed">
+</iframe>
+
+  </div>
+
+  <div class="address">
+    <i class="bi bi-geo-alt-fill"></i>
+    Lomas de Sotelo No. Exterior:1102 No Interior: Piso 4 Oficina 403
+    Lomas Hermosa, CP 11200, Miguel Hidalgo,
+    Ciudad de México (MX),
+    México
+    
+  </div>
+</div>
+<!-- UBICACIÓN -->
+</div>
+
+<div class="dock">
+  <button onclick="share()"><i class="bi bi-box-arrow-up"></i> Compartir</button>
+  <a href="contacto.vcf" class="primary" download>
+    <i class="bi bi-person-plus-fill"></i> Guardar
+  </a>
+</div>
+
+<script>
+function share(){
+  if(navigator.share){
+    navigator.share({title:'Itzel Salas Fuentes',text:'Mi tarjeta digital',url:location.href});
+  }else{
+    navigator.clipboard.writeText(location.href);
+    alert("Enlace copiado");
+  }
+}
+</script>
+
 </body>
 </html>
